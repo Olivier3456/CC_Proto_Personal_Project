@@ -529,9 +529,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -96.257, z: 0}
---- !u!4 &587605634 stripped
+--- !u!4 &460253466 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+  m_CorrespondingSourceObject: {fileID: 5393215578589016641, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
     type: 3}
   m_PrefabInstance: {fileID: 728467807}
   m_PrefabAsset: {fileID: 0}
@@ -1400,6 +1400,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1034082517}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1075030806
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1075030807}
+  - component: {fileID: 1075030808}
+  m_Layer: 0
+  m_Name: Eye
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1075030807
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075030806}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.169, z: 0.557}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2018504080}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1075030808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075030806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704515629a662754da8217eef6a6a0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewDistance: 100
+  viewAngle: 180
+  target: {fileID: 460253466}
 --- !u!1 &1082903851
 GameObject:
   m_ObjectHideFlags: 0
@@ -2897,7 +2944,7 @@ SphereCollider:
   m_GameObject: {fileID: 1602847773}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -3486,7 +3533,6 @@ GameObject:
   - component: {fileID: 2018504078}
   - component: {fileID: 2018504077}
   - component: {fileID: 2018504076}
-  - component: {fileID: 2018504081}
   - component: {fileID: 2018504082}
   m_Layer: 0
   m_Name: TRex
@@ -3594,24 +3640,10 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1602847774}
+  - {fileID: 1075030807}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2018504081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018504075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 704515629a662754da8217eef6a6a0f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewDistance: 50
-  viewAngle: 180
-  target: {fileID: 587605634}
 --- !u!114 &2018504082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3625,6 +3657,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 2018504076}
+  npcVision: {fileID: 1075030808}
+  walkSpeed: 2
+  runSpeed: 8
 --- !u!1 &2021875279
 GameObject:
   m_ObjectHideFlags: 0
