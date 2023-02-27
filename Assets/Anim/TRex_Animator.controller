@@ -32,8 +32,8 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 4677459483527278797}
-    m_Position: {x: 425.19495, y: 65.229996, z: 0}
+    m_State: {fileID: 8069194255836669522}
+    m_Position: {x: 406.36084, y: 107.09984, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -43,16 +43,16 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 4677459483527278797}
---- !u!1102 &4677459483527278797
+  m_DefaultState: {fileID: 8069194255836669522}
+--- !u!1102 &8069194255836669522
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "Arma\xE7\xE3o_correndo"
-  m_Speed: 1
+  m_Name: "Arma\xE7\xE3o_andar"
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -64,7 +64,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 52c4813d4e93d1944b1c201a795fac4b, type: 2}
+  m_Motion: {fileID: 7400000, guid: ca7bcfcc26ed6d04e92bb7d5c6949a5b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

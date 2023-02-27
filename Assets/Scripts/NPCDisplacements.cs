@@ -8,42 +8,32 @@ public class NPCDisplacements : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private NPCVision npcVision;
-
+    [Space(5)]
     [SerializeField] private float walkSpeed = 3.5f;
     [SerializeField] private float runSpeed = 7f;
-
+    [Space(5)]
     private AudioSource audioSource;
     [SerializeField] private AudioClip roarSound;
     [SerializeField] private AudioClip stepSound;
+    [Space(5)]
+    [SerializeField] private Animator animator;
 
     private bool hasRoared;   
     private float roarTimer;
     private float roarDelay = 10;
 
-    private Vector3 lastStepPosition;
-    private float distanceBetweenSteps = 4;
-
-
+    private float animatorWalkSpeed = 0.5f;
+   
 
     void Start()
     {
         SetRandomDestinationOnTheNavMesh();
         audioSource = GetComponent<AudioSource>();
-
-        lastStepPosition = transform.position;
     }
 
 
     void Update()
     {
-        if (Vector3.Distance(lastStepPosition, transform.position) > distanceBetweenSteps)
-        {
-            audioSource.PlayOneShot(stepSound);
-            lastStepPosition = transform.position;
-        }
-
-
-
         if (hasRoared)
         {
             roarTimer += Time.deltaTime;
@@ -56,6 +46,7 @@ public class NPCDisplacements : MonoBehaviour
             Debug.Log("Déplacement vers la position actuelle de la cible.");
             agent.SetDestination(npcVision.target.position);
             agent.speed = runSpeed;
+            animator.speed = animatorWalkSpeed * 2;
 
             if (!hasRoared)
             {
@@ -63,17 +54,24 @@ public class NPCDisplacements : MonoBehaviour
                 hasRoared = true;
                 roarTimer = 0;
             }
-        }
-        else hasRoared = false;
+        }        
 
 
 
         if (agent.remainingDistance < 2)
         {
             Debug.Log("Destination atteinte.");
-            SetRandomDestinationOnTheNavMesh();            
+            SetRandomDestinationOnTheNavMesh();
+            animator.speed = animatorWalkSpeed;
         }
     }
+
+
+    public void Step()
+    {        
+        audioSource.PlayOneShot(stepSound);
+    }
+
 
 
     private void SetRandomDestinationOnTheNavMesh()
